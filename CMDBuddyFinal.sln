@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33122.133
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CMDBuddyFinal", "CMDBuddyFinal\CMDBuddyFinal.csproj", "{0973F5E8-4DA9-4095-BA39-E513C4FFCD5E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0973F5E8-4DA9-4095-BA39-E513C4FFCD5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0973F5E8-4DA9-4095-BA39-E513C4FFCD5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0973F5E8-4DA9-4095-BA39-E513C4FFCD5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0973F5E8-4DA9-4095-BA39-E513C4FFCD5E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7D981499-43AA-46C9-AFB8-E3D53A700CDC}
+	EndGlobalSection
+EndGlobal

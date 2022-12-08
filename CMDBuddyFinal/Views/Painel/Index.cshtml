@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "Painel de Controle";
+    Layout = "~/Views/Shared/_LayoutPiloto.cshtml";
+}
+
+
+<br>
+<br>
+<div class="text-center">
+    <h2>Painel de Controle</h2>
+</div>
+
+<p>
+    @Html.ActionLink("Diários de Bordo", "Index", "DBordo", new { @class = "btn btn-primary" })
+</p>
+<p>
+    @Html.ActionLink("Planos de Voo", "Index", "PVoo", new { @class = "btn btn-primary" })
+</p>
+<p>
+    @Html.ActionLink("Caixa de Ferramentas", "Index", "CFerramentas", new { @class = "btn btn-primary" })
+</p>

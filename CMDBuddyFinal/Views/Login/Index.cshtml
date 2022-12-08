@@ -1,0 +1,21 @@
+﻿@model CMDBuddyFinal.Models.Usuario
+
+@{
+    ViewBag.Title = "Index";
+}
+<br />
+<br />
+<h2>Login de Usuarios</h2>
+@using (Html.BeginForm("Acessar", "Login", FormMethod.Post))
+{
+
+    @Html.LabelFor(model => model.Username, htmlAttributes: new { @class = "col-6" })
+    <br />
+    @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "form-control col-4" } })
+    <br />
+    @Html.LabelFor(model => model.Userpass, htmlAttributes: new { @class = "col-6" })
+    <br />
+    @Html.PasswordFor(model => model.Userpass, htmlAttributes: new { @class = "form-control col-4" })
+    <br />
+    <input type="submit" value="Login" class="btn btn-primary" />
+}
