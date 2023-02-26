@@ -321,13 +321,18 @@
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\Login\Acessar.cshtml" />
     <Content Include="Views\Painel\Index.cshtml" />
-    <Content Include="Views\DBordo\NovoDBordo.cshtml" />
+    <Content Include="Views\DBordo\Novo.cshtml" />
     <Content Include="Views\Shared\_LayoutPiloto.cshtml" />
     <Content Include="Views\DBordo\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutSemNavbar.cshtml" />
+    <Content Include="Views\DBordo\Editar.cshtml" />
+    <Content Include="Views\DBordo\Delete.cshtml" />
+    <Content Include="Views\Login\Cadastra.cshtml" />
+    <Content Include="Views\Home\Algo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="img\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

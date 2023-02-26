@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using CMDBuddyFinal.Models;
+using Microsoft.Ajax.Utilities;
 
 namespace CMDBuddy.Controllers
 {
@@ -16,12 +17,14 @@ namespace CMDBuddy.Controllers
             return View();
         }
 
+
+
         [HttpPost]
         public ActionResult Acessar(Usuario usuario)
         {
             Conexao conexao = new Conexao();
-            string StrQuery = "SELECT * FROM users WHERE "; 
-            StrQuery += "login = '" + usuario.Username + "' and "; 
+            string StrQuery = "SELECT * FROM users WHERE ";
+            StrQuery += "login = '" + usuario.Username + "' and ";
             StrQuery += "senha = '" + usuario.Userpass + "';";
             using (MySqlCommand comando = new MySqlCommand(StrQuery, conexao.conn))
             {
@@ -37,5 +40,28 @@ namespace CMDBuddy.Controllers
                 }
             }
         }
+        public ActionResult Cadastra()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult SalvarUsuario(Usuario usuario)
+        {
+
+            using (Conexao conexao = new Conexao())
+            {
+                string StrQuery = "insert into users (login, senha) values ( ";
+                StrQuery += "'" + usuario.Username + "',";
+                StrQuery += "'" + usuario.Userpass + "');";
+                using (MySqlCommand comando = new MySqlCommand(StrQuery, conexao.conn))
+                {
+                    comando.ExecuteNonQuery();
+                }
+                return RedirectToAction("Index");
+            }
+        }
+
+
     }
 }

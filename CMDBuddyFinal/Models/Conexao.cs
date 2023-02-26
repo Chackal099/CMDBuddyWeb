@@ -30,7 +30,7 @@ namespace CMDBuddyFinal.Models
             {
                 conn.Open();
             }
-            catch (Exception)
+            catch (Exception ec)
             {
                 throw;
             }
