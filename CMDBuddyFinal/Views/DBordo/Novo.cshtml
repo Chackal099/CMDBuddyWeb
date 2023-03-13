@@ -36,12 +36,12 @@
         </div>
         <br />
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-3">
                 @Html.LabelFor(model => model.Marca, htmlAttributes: new { @class = "control-label col-12" })
                 @Html.EditorFor(model => model.Marca, new { htmlAttributes = new { @class = "form-control col-12" } })
                 @Html.ValidationMessageFor(model => model.Marca, "", new { @class = "text-danger" })
             </div>
-            <div class="col-md-4">
+            <div class="col-md-3">
                 @Html.LabelFor(model => model.Fabricante, htmlAttributes: new { @class = "control-label col-12" })
                 @Html.EditorFor(model => model.Fabricante, new { htmlAttributes = new { @class = "form-control col-12" } })
                 @Html.ValidationMessageFor(model => model.Fabricante, "", new { @class = "text-danger" })
@@ -51,17 +51,18 @@
                 @Html.EditorFor(model => model.Modelo, new { htmlAttributes = new { @class = "form-control col-12" } })
                 @Html.ValidationMessageFor(model => model.Modelo, "", new { @class = "text-danger" })
             </div>
-            <div class="col-md-1">
+            <div class="col-md-2">
                 @Html.LabelFor(model => model.CatReg, htmlAttributes: new { @class = "control-label col-12" })
                 @Html.EditorFor(model => model.CatReg, new { htmlAttributes = new { @class = "form-control col-12" } })
                 @Html.ValidationMessageFor(model => model.CatReg, "", new { @class = "text-danger" })
             </div>
-            <div class="col-md-4">
+            <div class="col-md-2">
                 @Html.LabelFor(model => model.NS, htmlAttributes: new { @class = "control-label col-12" })
                 @Html.EditorFor(model => model.NS, new { htmlAttributes = new { @class = "form-control col-12" } })
                 @Html.ValidationMessageFor(model => model.NS, "", new { @class = "text-danger" })
             </div>
         </div>
+        <br />
         <br />
         <div class="row">
             <div class="col-md-2">
@@ -80,6 +81,7 @@
                 @Html.ValidationMessageFor(model => model.TotHoraCel, "", new { @class = "text-danger" })
             </div>
         </div>
+        <br />
         <br />
         <div class="row">
             <div class="col-md-6">

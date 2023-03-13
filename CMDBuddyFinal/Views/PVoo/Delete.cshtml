@@ -1,0 +1,23 @@
+﻿@model CMDBuddyFinal.Models.PVoo
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_LayoutSemNavbar.cshtml";
+}
+<br />
+<div class="text-center">
+    <h3>Excluir o Plano de Voo?</h3>
+</div>
+
+<div>
+    @using (Html.BeginForm("Deletar", "PVoo", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        @Html.HiddenFor(model => model.idPVoo)
+        <div class="row">
+            <div class="col-md-offset-2 col-md-18">
+                <input type="submit" value="Sim" class="btn btn-danger" /> || @Html.ActionLink("Não", "Index")
+            </div>
+        </div>
+    }
+</div>

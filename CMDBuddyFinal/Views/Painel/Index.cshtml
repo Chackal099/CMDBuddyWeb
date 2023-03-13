@@ -1,22 +1,21 @@
 ﻿
 @{
     ViewBag.Title = "Painel de Controle";
-    Layout = "~/Views/Shared/_LayoutPiloto.cshtml";
+    Layout = "~/Views/Shared/_LayoutSemNavbar.cshtml";
 }
 
 
 <br>
 <br>
-<div class="text-center">
-    <h2>Painel de Controle</h2>
-</div>
+<body class="d-flex h-100 text-center text-bg-dark">
+    <main class="px-3">
+        <h1>Painel de Controle.</h1>
+        <p class="lead">Bem Vindo ao Commander Buddy.</p>
+        <p class="lead">
+            @Html.ActionLink("Diários de Bordo", "Index", "DBordo", null, new { @class = "btn btn-primary" })
+            @Html.ActionLink("Planos de Voo", "Index", "PVoo", null, new { @class = "btn btn-primary" })
+            @Html.ActionLink("Caixa de Ferramentas", "Index", "CFerramentas", null, new { @class = "btn btn-primary" })
+        </p>
+    </main>
+</body>
 
-<p>
-    @Html.ActionLink("Diários de Bordo", "Index", "DBordo", new { @class = "btn btn-primary" })
-</p>
-<p>
-    @Html.ActionLink("Planos de Voo", "Index", "PVoo", new { @class = "btn btn-primary" })
-</p>
-<p>
-    @Html.ActionLink("Caixa de Ferramentas", "Index", "CFerramentas", new { @class = "btn btn-primary" })
-</p>
