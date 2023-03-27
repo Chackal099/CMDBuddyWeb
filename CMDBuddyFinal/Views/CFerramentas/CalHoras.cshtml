@@ -1,0 +1,28 @@
+﻿@model CMDBuddyFinal.Models.HVoo
+
+@{
+    ViewBag.Title = "CalHoras";
+    Layout = "~/Views/Shared/_LayoutPiloto.cshtml";
+}
+
+<h2>Calculadora de Horas</h2>
+
+@using (Html.BeginForm("CalculaHoras", "CFerramentas", FormMethod.Post))
+{
+    <div class="form-group">
+        <label>Horas:</label>
+        @Html.TextBoxFor(model => model.Horas, new { @class = "form-control" })
+        <label>Minutos:</label>
+        @Html.TextBoxFor(model => model.Minutos, new { @class = "form-control" })
+        <label>Segundos:</label>
+        @Html.TextBoxFor(model => model.Segundos, new { @class = "form-control" })
+    </div>
+
+    <button type="submit" class="btn btn-primary">Converter</button>
+}
+
+@if (ViewBag.Resultado != null)
+{
+        <br>
+        <div class="alert alert-info">O tempo de voo total é de @ViewBag.Resultado horas.</div>
+}

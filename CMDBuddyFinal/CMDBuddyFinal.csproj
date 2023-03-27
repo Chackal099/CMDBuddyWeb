@@ -167,6 +167,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CFerramentasController.cs" />
     <Compile Include="Controllers\DBordoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
@@ -175,8 +176,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\CMedida.cs" />
     <Compile Include="Models\Conexao.cs" />
     <Compile Include="Models\DBordo.cs" />
+    <Compile Include="Models\HVoo.cs" />
+    <Compile Include="Models\PICAO.cs" />
     <Compile Include="Models\PVoo.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -336,6 +340,10 @@
     <Content Include="Views\PVoo\Delete.cshtml" />
     <Content Include="Views\PVoo\Editar.cshtml" />
     <Content Include="Views\Shared\_LayoutVazio.cshtml" />
+    <Content Include="Views\CFerramentas\Index.cshtml" />
+    <Content Include="Views\CFerramentas\CalHoras.cshtml" />
+    <Content Include="Views\CFerramentas\ConMedidas.cshtml" />
+    <Content Include="Views\CFerramentas\RelICAO.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

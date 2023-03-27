@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "Caixa de Ferramentas";
+    Layout = "~/Views/Shared/_LayoutPiloto.cshtml";
+}
+
+
+<br>
+<br>
+<body class="d-flex h-100 text-center text-bg-dark">
+    <main class="px-3">
+        <h1>Caixa de Ferramentas</h1>
+        <p class="lead">
+            @Html.ActionLink("Calculadora de Horas", "CalHoras", "CFerramentas", null, new { @class = "btn btn-primary" })
+            @Html.ActionLink("Relação de códigos ICAO", "RelICAO", "CFerramentas", null, new { @class = "btn btn-primary" })
+            @Html.ActionLink("Conversor de Medidas", "ConMedidas", "CFerramentas", null, new { @class = "btn btn-primary" })
+        </p>
+    </main>
+</body>
