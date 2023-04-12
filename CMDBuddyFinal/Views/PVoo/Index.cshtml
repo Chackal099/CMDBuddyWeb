@@ -10,54 +10,50 @@
     <h2>Planos de Voo</h2>
 </div>
 
-<p>
-    @Html.ActionLink("Novo Planos de Voo", "Novo", null, new { @class = "btn btn-primary" })
-</p>
-<table class="table">
-    <thead class="thead-dark">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Destinat)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.HorApre)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Remet)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Pilot)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Prefix)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
+<body style="background-color: #87CEEB;">
+    <p>
+        @Html.ActionLink("Novo Plano de Voo", "Novo", null, new { @class = "btn btn-primary" })
+    </p>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Pilot)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.HorApre)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Remet)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Prefix)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
 
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Destinat)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.HorApre)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Remet)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Pilot)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Prefix)
-            </td>
-            <td>
-                @Html.ActionLink("Editar", "Editar", new { id = item.idPVoo }, new { @class = "btn btn-primary" })
-                @Html.ActionLink("Excluir", "Delete", new { id = item.idPVoo }, new { @class = "btn btn-danger" })
-            </td>
-        </tr>
-    }
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Pilot)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HorApre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Remet)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Prefix)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "Editar", new { id = item.idPVoo }, new { @class = "btn btn-primary" })
+                    @Html.ActionLink("Excluir", "Delete", new { id = item.idPVoo }, new { @class = "btn btn-danger" })
+                </td>
+            </tr>
+        }
 
-</table>
+    </table>
+    </body>

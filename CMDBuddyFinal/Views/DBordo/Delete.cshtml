@@ -9,16 +9,18 @@
     <h3>Excluir o Diário de Bordo?</h3>
 </div>
 
-<div>
-    @using (Html.BeginForm("Deletar","Dbordo", FormMethod.Post))
-     {
-      @Html.AntiForgeryToken()
-      @Html.HiddenFor(model => model.IdBordo)
-        <div class="row">
-            <div class="col-md-offset-2 col-md-18">
-                <input type="submit" value="Sim" class="btn btn-danger" /> || @Html.ActionLink("Não", "Index")
+<body style="background-color: #00b4fc;">
+    <div>
+        @using (Html.BeginForm("Deletar", "DBordo", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            @Html.HiddenFor(model => model.IdBordo)
+            <div class="row">
+                <div class="col-md-offset-2 col-md-18">
+                    <input type="submit" value="Sim" class="btn btn-danger" /> || @Html.ActionLink("Não", "Index")
+                </div>
             </div>
-        </div>
-     }
-</div>
+        }
+    </div>
 
+</body>

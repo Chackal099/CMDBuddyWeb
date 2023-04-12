@@ -14,7 +14,7 @@ namespace CMDBuddyFinal.Models
         public int NumeroTripulantes { get; set; }
         [Display(Name = "Nome dos Tripulantes")]
         public string NomeTripulantes { get; set; }
-        [Display(Name = "Hora")]
+        [Display(Name = "Horário")]
         public string Hora { get; set; }
         [Display(Name = "Marca do Avião")]
         public string Marca { get; set; }
@@ -27,11 +27,11 @@ namespace CMDBuddyFinal.Models
         [Display(Name = "Categoria Registrada")]
         public string CatReg { get; set; }
         [Display(Name = "Horas da Célula Anterior")]
-        public int HoraCelAnt { get; set; }
+        public float HoraCelAnt { get; set; }
         [Display(Name = "Horas Totais da Página na Célula")]
-        public int HoraCelPag { get; set; }
+        public float HoraCelPag { get; set; }
         [Display(Name = "Total Horas pela Célula")]
-        public int TotHoraCel { get; set; }
+        public float TotHoraCel { get; set; }
         [Display(Name = "Aeródromo de Origem")]
         public string Origem { get; set; }
         [Display(Name = "Aeródromo de Destino")]

@@ -7,7 +7,7 @@ namespace CMDBuddyFinal.Models
 {
     public class CMedida
     {
-        public int valor { get; set; }
+        public float valor { get; set; }
         public string opcaoConversao { get; set; }
     }
 }

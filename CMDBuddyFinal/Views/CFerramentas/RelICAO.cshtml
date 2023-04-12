@@ -4,36 +4,41 @@
     ViewBag.Title = "RelICAO";
     Layout = "~/Views/Shared/_LayoutPiloto.cshtml";
 }
-
+<br />
+<br />
 <h2>Relação de códigos ICAO</h2>
 
-@using (Html.BeginForm("PesquisaICAO", "CFerramentas", FormMethod.Post))
-{
-    <div class="form-group">
-        @Html.LabelFor(model => model.ICAO, new { @class = "control-label" })
-        @Html.TextBoxFor(model => model.ICAO, new { @class = "form-control" })
-    </div>
-    <button type="submit" class="btn btn-primary">Pesquisar</button>
-}
 
-@using (Html.BeginForm("PesquisaAerodromo", "CFerramentas", FormMethod.Post))
-{
+<body style="background-color: #87CEEB;">
+    @using (Html.BeginForm("PesquisaICAO", "CFerramentas", FormMethod.Post))
+    {
+        <div class="form-group">
+            @Html.LabelFor(model => model.ICAO, new { @class = "control-label" })
+            @Html.TextBoxFor(model => model.ICAO, new { @class = "form-control" })
+        </div>
+        <button type="submit" class="btn btn-primary">Pesquisar</button>
+    }
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.Aerodromo, new { @class = "control-label" })
-        @Html.TextBoxFor(model => model.Aerodromo, new { @class = "form-control" })
-    </div>
-    <button type="submit" class="btn btn-primary">Pesquisar</button>
-}
+    @using (Html.BeginForm("PesquisaAerodromo", "CFerramentas", FormMethod.Post))
+    {
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Aerodromo, new { @class = "control-label" })
+            @Html.TextBoxFor(model => model.Aerodromo, new { @class = "form-control" })
+        </div>
+        <button type="submit" class="btn btn-primary">Pesquisar</button>
+    }
 
 
-@if (ViewBag.Aerodromo != null)
-{
-    <br>
-    <div class="alert alert-info">@Model.ICAO = @ViewBag.Aerodromo.</div>
-}
-@if (ViewBag.ICAO != null)
-{
-    <br>
-    <div class="alert alert-info">@Model.Aerodromo = @ViewBag.ICAO .</div>
-}
+    @if (ViewBag.Aerodromo != null)
+    {
+        <br>
+        <div class="alert alert-info">@Model.ICAO = @ViewBag.Aerodromo.</div>
+    }
+    @if (ViewBag.ICAO != null)
+    {
+        <br>
+        <div class="alert alert-info">@Model.Aerodromo = @ViewBag.ICAO .</div>
+    }
+
+</body>

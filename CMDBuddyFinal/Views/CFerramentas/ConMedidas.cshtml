@@ -4,11 +4,14 @@
     ViewBag.Title = "Conversor de medidas";
     Layout = "~/Views/Shared/_LayoutPiloto.cshtml";
 }
-
+<br />
+<br />
 <h2>Conversor de medidas</h2>
 
-@using (Html.BeginForm("Converte", "CFerramentas", FormMethod.Post))
-{
+<body style="background-color: #87CEEB;">
+
+    @using (Html.BeginForm("Converte", "CFerramentas", FormMethod.Post))
+    {
         <div class="form-group">
             <label for="medida">Selecione a medida que deseja converter:</label>
             <select class="form-control" id="medida" name="opcaoConversao">
@@ -23,9 +26,11 @@
             <input type="number" step="0.01" class="form-control" id="valor" name="valor" required>
         </div>
         <button type="submit" class="btn btn-primary">Converter</button>
-    if (ViewBag.Resultado != null)
-    {
-        <hr>
-        <div class="alert alert-info">@ViewBag.Resultado</div>
+        if (ViewBag.Resultado != null)
+        {
+            <hr>
+            <div class="alert alert-info">@ViewBag.Resultado</div>
+        }
     }
-}
+
+    </body>

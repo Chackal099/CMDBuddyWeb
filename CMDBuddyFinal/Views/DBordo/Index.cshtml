@@ -10,48 +10,50 @@
     <h2>Diários de Bordo</h2>
 </div>
 
-<p>
-    @Html.ActionLink("Novo Diário de Bordo", "Novo", null, new { @class = "btn btn-primary" })
-</p>
-<table class="table">
-    <thead class="thead-dark">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.NomeTripulantes)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Hora)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Fabricante)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Modelo)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
+<body style="background-color: #00b4fc;">
+    <p>
+        @Html.ActionLink("Novo Diário de Bordo", "Novo", null, new { @class = "btn btn-primary" })
+    </p>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.NomeTripulantes)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Hora)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Fabricante)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Modelo)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
 
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.NomeTripulantes)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Hora)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Fabricante)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Modelo)
-            </td>
-            <td>
-                @Html.ActionLink("Editar", "Editar", new { id = item.IdBordo }, new { @class = "btn btn-primary" })
-                @Html.ActionLink("Excluir", "Delete", new { id = item.IdBordo }, new { @class = "btn btn-danger" })
-            </td>
-        </tr>
-    }
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NomeTripulantes)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Hora)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Fabricante)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Modelo)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "Editar", new { id = item.IdBordo }, new { @class = "btn btn-primary" })
+                    @Html.ActionLink("Excluir", "Delete", new { id = item.IdBordo }, new { @class = "btn btn-danger" })
+                </td>
+            </tr>
+        }
 
-</table>
+    </table>
+    </body>

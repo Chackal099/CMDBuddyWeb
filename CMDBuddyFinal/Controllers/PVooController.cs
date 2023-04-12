@@ -49,7 +49,7 @@ namespace CMDBuddyFinal.Controllers
                         OutrosDados = Convert.ToString(dr["OutrosDados"]),
                         Autonomia = Convert.ToString(dr["Autonomia"]),
                         PessBordo = Convert.ToString(dr["PessBordo"]),
-                        RadEmer = Convert.ToString(dr["RadEmer"]),
+                        RadEmer = Convert.ToBoolean(dr["RadEmer"]),
                         EquipSobrev = Convert.ToBoolean(dr["EquipSobrev"]),
                         VestSobrev = Convert.ToBoolean(dr["VestSobrev"]),
                         QuantBotes = Convert.ToString(dr["QuantBotes"]),
@@ -120,7 +120,7 @@ namespace CMDBuddyFinal.Controllers
         {
             Conexao conexao = new Conexao();
             string StrQuery = "SELECT * FROM pvoo WHERE ";
-            StrQuery += "idPVoo = " + Id + 1 + ";";
+            StrQuery += "idPVoo = " + Id + ";";
 
             using (MySqlCommand comando = new MySqlCommand(StrQuery, conexao.conn))
             {
@@ -129,6 +129,7 @@ namespace CMDBuddyFinal.Controllers
                 {
                     dr.Read();
                     PVoo pvoo = new PVoo();
+                    pvoo.idPVoo = Convert.ToInt32(dr["idPVoo"]);
                     pvoo.Destinat = Convert.ToString(dr["Destinat"]);
                     pvoo.HorApre = Convert.ToString(dr["HorApre"]);
                     pvoo.Remet = Convert.ToString(dr["Remet"]);
@@ -152,7 +153,7 @@ namespace CMDBuddyFinal.Controllers
                     pvoo.OutrosDados = Convert.ToString(dr["OutrosDados"]);
                     pvoo.Autonomia = Convert.ToString(dr["Autonomia"]);
                     pvoo.PessBordo = Convert.ToString(dr["PessBordo"]);
-                    pvoo.RadEmer = Convert.ToString(dr["RadEmer"]);
+                    pvoo.RadEmer = Convert.ToBoolean(dr["RadEmer"]);
                     pvoo.EquipSobrev = Convert.ToBoolean(dr["EquipSobrev"]);
                     pvoo.VestSobrev = Convert.ToBoolean(dr["VestSobrev"]);
                     pvoo.QuantBotes = Convert.ToString(dr["QuantBotes"]);
@@ -171,7 +172,7 @@ namespace CMDBuddyFinal.Controllers
             }
         }
         [HttpPost]
-        public ActionResult Edita(PVoo pvoo)
+        public ActionResult Editar(PVoo pvoo)
         {
             using (Conexao conexao = new Conexao())
             {
@@ -230,6 +231,7 @@ namespace CMDBuddyFinal.Controllers
                 {
                     dt.Read();
                     PVoo pvoo = new PVoo();
+                    pvoo.idPVoo = Convert.ToInt32(dt["idPVoo"]);
                     pvoo.Destinat = Convert.ToString(dt["Destinat"]);
                     pvoo.HorApre = Convert.ToString(dt["HorApre"]);
                     pvoo.Remet = Convert.ToString(dt["Remet"]);
@@ -253,7 +255,7 @@ namespace CMDBuddyFinal.Controllers
                     pvoo.OutrosDados = Convert.ToString(dt["OutrosDados"]);
                     pvoo.Autonomia = Convert.ToString(dt["Autonomia"]);
                     pvoo.PessBordo = Convert.ToString(dt["PessBordo"]);
-                    pvoo.RadEmer = Convert.ToString(dt["RadEmer"]);
+                    pvoo.RadEmer = Convert.ToBoolean(dt["RadEmer"]);
                     pvoo.EquipSobrev = Convert.ToBoolean(dt["EquipSobrev"]);
                     pvoo.VestSobrev = Convert.ToBoolean(dt["VestSobrev"]);
                     pvoo.QuantBotes = Convert.ToString(dt["QuantBotes"]);
@@ -277,7 +279,7 @@ namespace CMDBuddyFinal.Controllers
             using (Conexao conexao = new Conexao())
             {
                 string StrQuery = "Delete from pvoo";
-                StrQuery += " where idPVoo = " + pvoo.idPVoo + 1 + ";";
+                StrQuery += " where idPVoo = " + pvoo.idPVoo + ";";
                 using (MySqlCommand comando = new MySqlCommand(StrQuery, conexao.conn))
                 {
                     comando.ExecuteNonQuery();

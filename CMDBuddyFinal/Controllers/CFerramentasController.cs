@@ -48,19 +48,19 @@ namespace CMDBuddyFinal.Controllers
             {
                 case "kilo":
                     var kilo = medida.valor * 2.205;
-                    ViewBag.Resultado = $"{medida.valor} kg = {kilo:F2} lb";
+                    ViewBag.Resultado = $"{medida.valor:F2} kg = {kilo:F2} lb";
                     break;
                 case "metro":
                     var metro = medida.valor / 1609.344;
-                    ViewBag.Resultado = $"{medida.valor} m = {metro:F2} mi";
+                    ViewBag.Resultado = $"{medida.valor:F2} m = {metro:F2} mi";
                     break;
                 case "litro":
                     var litro = medida.valor / 3.785;
-                    ViewBag.Resultado = $"{medida.valor} L = {litro:F2} gal";
+                    ViewBag.Resultado = $"{medida.valor:F2} L = {litro:F2} gal";
                     break;
                 case "centimetro":
                     var centimetro = medida.valor / 2.54;
-                    ViewBag.Resultado = $"{medida.valor} cm = {centimetro:F2} in";
+                    ViewBag.Resultado = $"{medida.valor:F2} cm = {centimetro:F2} in";
                     break;
                 default:
                     ViewBag.Resultado = "Opção inválida.";

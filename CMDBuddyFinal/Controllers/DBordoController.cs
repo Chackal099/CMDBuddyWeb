@@ -33,9 +33,9 @@ namespace CMDBuddyFinal.Controllers
                         Modelo = Convert.ToString(dr["Modelo"]),
                         NS = Convert.ToString(dr["NS"]),
                         CatReg = Convert.ToString(dr["CatReg"]),
-                        HoraCelAnt = Convert.ToInt32(dr["HorCelAnt"]),
-                        HoraCelPag = Convert.ToInt32(dr["HorCelDia"]),
-                        TotHoraCel = Convert.ToInt32(dr["ValHorCel"]),
+                        HoraCelAnt = Convert.ToSingle(dr["HorCelAnt"]),
+                        HoraCelPag = Convert.ToSingle(dr["HorCelDia"]),
+                        TotHoraCel = Convert.ToSingle(dr["ValHorCel"]),
                         Origem = Convert.ToString(dr["Origem"]),
                         Destino = Convert.ToString(dr["Destino"]),
                         HorPart = Convert.ToString(dr["HorPart"]),
@@ -104,7 +104,7 @@ namespace CMDBuddyFinal.Controllers
         {
             Conexao conexao = new Conexao();
             string StrQuery = "SELECT * FROM bordo WHERE ";
-            StrQuery += "idBordo = " + Id + 1 + ";";
+            StrQuery += "idBordo = " + Id + ";";
 
             using (MySqlCommand comando = new MySqlCommand(StrQuery, conexao.conn))
             {
@@ -113,17 +113,18 @@ namespace CMDBuddyFinal.Controllers
                 {
                     dr.Read();
                     DBordo dbordo = new DBordo();
+                    dbordo.IdBordo = Convert.ToInt32(dr["idBordo"]);
                     dbordo.NumeroTripulantes = Convert.ToInt32(dr["NumeroTripulantes"]);
                     dbordo.NomeTripulantes = Convert.ToString(dr["NomeTripulantes"]);
-                    dbordo.Hora = Convert.ToString(dr["Hora"]);
+                    dbordo.Hora = Convert.ToDateTime(dr["Hora"]).ToString("hh:mm");
                     dbordo.Marca = Convert.ToString(dr["Marca"]);
                     dbordo.Fabricante = Convert.ToString(dr["Fabricante"]);
                     dbordo.Modelo = Convert.ToString(dr["Modelo"]);
                     dbordo.NS = Convert.ToString(dr["NS"]);
                     dbordo.CatReg = Convert.ToString(dr["CatReg"]);
-                    dbordo.HoraCelAnt = Convert.ToInt32(dr["HorCelAnt"]);
-                    dbordo.HoraCelPag = Convert.ToInt32(dr["HorCelDia"]);
-                    dbordo.TotHoraCel = Convert.ToInt32(dr["ValHorCel"]);
+                    dbordo.HoraCelAnt = Convert.ToSingle(dr["HorCelAnt"]);
+                    dbordo.HoraCelPag = Convert.ToSingle(dr["HorCelDia"]);
+                    dbordo.TotHoraCel = Convert.ToSingle(dr["ValHorCel"]);
                     dbordo.Origem = Convert.ToString(dr["Origem"]);
                     dbordo.Destino = Convert.ToString(dr["Destino"]);
                     dbordo.HorPart = Convert.ToString(dr["HorPart"]);
@@ -152,17 +153,16 @@ namespace CMDBuddyFinal.Controllers
             using (Conexao conexao = new Conexao())
             {
                 string StrQuery = "update bordo set ";
-                StrQuery += "NumeroTripulantes = '" + dbordo.NumeroTripulantes + "', ";
+                StrQuery += "NumeroTripulantes = " + dbordo.NumeroTripulantes + ", ";
                 StrQuery += "NomeTripulantes = '" + dbordo.NomeTripulantes + "', ";
-                StrQuery += "Hora = '" + dbordo.Hora + "', ";
                 StrQuery += "Marca = '" + dbordo.Marca + "', ";
                 StrQuery += "Fabricante = '" + dbordo.Fabricante + "', ";
                 StrQuery += "Modelo = '" + dbordo.Modelo + "', ";
                 StrQuery += "NS = '" + dbordo.NS + "', ";
                 StrQuery += "CatReg = '" + dbordo.CatReg + "', ";
-                StrQuery += "HorCelAnt = '" + dbordo.HoraCelAnt + "', ";
-                StrQuery += "HorCelDia = '" + dbordo.HoraCelPag + "', ";
-                StrQuery += "ValHorCel = '" + dbordo.TotHoraCel + "', ";
+                StrQuery += "HorCelAnt = " + dbordo.HoraCelAnt + ", ";
+                StrQuery += "HorCelDia = " + dbordo.HoraCelPag + ", ";
+                StrQuery += "ValHorCel = " + dbordo.TotHoraCel + ", ";
                 StrQuery += "Origem = '" + dbordo.Origem + "', ";
                 StrQuery += "Destino = '" + dbordo.Destino + "', ";
                 StrQuery += "HorPart = '" + dbordo.HorPart + "', ";
@@ -175,7 +175,8 @@ namespace CMDBuddyFinal.Controllers
                 StrQuery += "HorIFRC = '" + dbordo.HorIFRC + "', ";
                 StrQuery += "HorTotal = '" + dbordo.HorTotal + "', ";
                 StrQuery += "CombTotal = '" + dbordo.CombustTotal + "', ";
-                StrQuery += "Ocorr = '" + dbordo.Ocorrencias + "' ";
+                StrQuery += "Ocorr = '" + dbordo.Ocorrencias + "', ";
+                StrQuery += "Hora = '" + Convert.ToDateTime(dbordo.Hora).ToString("hh:mm") + "' ";
                 StrQuery += "where idBordo = " + dbordo.IdBordo + ";";
                 using (MySqlCommand comando = new MySqlCommand(StrQuery, conexao.conn))
                 {
@@ -198,17 +199,18 @@ namespace CMDBuddyFinal.Controllers
                 {
                     dt.Read();
                     DBordo dbordo = new DBordo();
+                    dbordo.IdBordo = Convert.ToInt32(dt["idBordo"]);
                     dbordo.NumeroTripulantes = Convert.ToInt32(dt["NumeroTripulantes"]);
                     dbordo.NomeTripulantes = Convert.ToString(dt["NomeTripulantes"]);
-                    dbordo.Hora = Convert.ToString(dt["Hora"]);
+                    dbordo.Hora = Convert.ToDateTime(dt["Hora"]).ToString("hh:mm");
                     dbordo.Marca = Convert.ToString(dt["Marca"]);
                     dbordo.Fabricante = Convert.ToString(dt["Fabricante"]);
                     dbordo.Modelo = Convert.ToString(dt["Modelo"]);
                     dbordo.NS = Convert.ToString(dt["NS"]);
                     dbordo.CatReg = Convert.ToString(dt["CatReg"]);
-                    dbordo.HoraCelAnt = Convert.ToInt32(dt["HorCelAnt"]);
-                    dbordo.HoraCelPag = Convert.ToInt32(dt["HorCelDia"]);
-                    dbordo.TotHoraCel = Convert.ToInt32(dt["ValHorCel"]);
+                    dbordo.HoraCelAnt = Convert.ToSingle(dt["HorCelAnt"]);
+                    dbordo.HoraCelPag = Convert.ToSingle(dt["HorCelDia"]);
+                    dbordo.TotHoraCel = Convert.ToSingle(dt["ValHorCel"]);
                     dbordo.Origem = Convert.ToString(dt["Origem"]);
                     dbordo.Destino = Convert.ToString(dt["Destino"]);
                     dbordo.HorPart = Convert.ToString(dt["HorPart"]);
@@ -237,7 +239,7 @@ namespace CMDBuddyFinal.Controllers
          using (Conexao conexao = new Conexao())
          {
            string StrQuery = "Delete from bordo";
-           StrQuery += " where idBordo = " + dbordo.IdBordo + 1 + ";";
+           StrQuery += " where idBordo = " + dbordo.IdBordo + ";";
              using (MySqlCommand comando = new MySqlCommand(StrQuery, conexao.conn))
              {
                comando.ExecuteNonQuery();
