@@ -5,7 +5,7 @@
 }
 <img src="~/Img/loginimg.png" alt="Imagem de Login" width="400" height="400" class="float-lg-right">
 <br />
-
+<body style="background-color: #b1ccc4;">
 <h2>Login de Usuarios</h2>
 
 @using (Html.BeginForm("Index", "Painel", FormMethod.Post))
@@ -22,9 +22,13 @@
     <input type="submit" value="Login" class="btn btn-primary" />
     <br />
     <br />
-    
+
 
 
 }
 
 @Html.ActionLink("Cadastre-se!", "Cadastra", "Login", null, null)
+<br />
+@Html.ActionLink("Esqueceu a Senha?", "Lembra", "Login", null, null)
+
+</body>

@@ -13,5 +13,7 @@ namespace CMDBuddyFinal.Models
         public string Username { get; set; }
         [Display(Name = "Senha")]
         public string Userpass { get; set; }
+        public string Email { get; set; }
+        public string Nome { get; set; }
     }
 }

@@ -1,8 +1,12 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using CMDBuddyFinal.Models;
+using Microsoft.Ajax.Utilities;
+
 
 namespace CMDBuddyFinal.Controllers
 {
@@ -31,6 +35,25 @@ namespace CMDBuddyFinal.Controllers
         {
             ViewBag.Message = "Entre com seu Usuário e Senha para usar o Commander Buddy.";
             return View();
+        }
+
+        [HttpPost]
+        public ActionResult Salvar(Support ticket)
+        {
+
+            using (Conexao conexao = new Conexao())
+            {
+                string StrQuery = "insert into users (nome, email, telefone, mensagem) values ( ";
+                StrQuery += "'" + ticket.Nome + "',";
+                StrQuery += "'" + ticket.Email + "',";
+                StrQuery += "'" + ticket.Telefone + "',";
+                StrQuery += "'" + ticket.Mensagem + "');";
+                using (MySqlCommand comando = new MySqlCommand(StrQuery, conexao.conn))
+                {
+                    comando.ExecuteNonQuery();
+                }
+                return RedirectToAction("Index");
+            }
         }
     }
 }

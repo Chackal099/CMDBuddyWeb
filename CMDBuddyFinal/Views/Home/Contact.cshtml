@@ -1,11 +1,58 @@
-﻿@{
+﻿@model CMDBuddyFinal.Models.Support
+
+@{
     ViewBag.Title = "Contact";
 }
 <br />
 <br />
 
-<address>
+<body style="background-color: #b1ccc4;">
+    <div class="float-lg-right">
+        @using (Html.BeginForm("Enviar", "Home", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
 
+            <div class="form-horizontal">
+                <h4 class="text-center">Atendimento</h4>
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="row">
+
+                    <div class="col-md-4">
+                        @Html.EditorFor(model => model.Nome, new { htmlAttributes = new { @class = "form-control col-12", placeholder = "Nome" } })
+                        @Html.ValidationMessageFor(model => model.Nome, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="col-md-4">
+                        @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control col-12", placeholder = "E-mail" } })
+                        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                    </div>
+
+                    <div class="col-md-4">
+                        @Html.EditorFor(model => model.Telefone, new { htmlAttributes = new { @class = "form-control col-12", placeholder = "Telefone" } })
+                        @Html.ValidationMessageFor(model => model.Telefone, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <br />
+
+                <div class="row">
+
+                    <div class="col-md-12">
+                        @Html.EditorFor(model => model.Mensagem, new { htmlAttributes = new { @class = "form-control col-12", placeholder = "Mensagem" }})
+                        @Html.ValidationMessageFor(model => model.Mensagem, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <br />
+
+                <div class="row">
+                    <div class="col-md-offset-2 col-md-12" align=right>
+                        <input type="submit" value="Enviar" class="btn btn-outline-success" />
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
     <div class="col-lg-4">
         <svg class="bd-placeholder-img rounded-circle float-md-none" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false">
             <title>Placeholder</title>
@@ -19,7 +66,10 @@
 
         <h2>Leonardo Schumann</h2>
         <p>Aluno da UNIFAAT, já teve contato com várias linguagens de programação, vindo de uma familia de aviadores, tem bastante experiência com a vida cotidiana de um piloto</p>
-        <p><strong>Suporte e demais perguntas:</strong>   <a href="mailto:leo.cani099@gmail.com">leo.cani099@gmail.com</a> <br />
-        <a href="https://www.linkedin.com/in/leonardo-schumann/">Meu LinkedIn</a></p>
+        <p>
+            <strong>Suporte e demais perguntas:</strong>   <a href="mailto:leo.cani099@gmail.com">leo.cani099@gmail.com</a> <br />
+            <a href="https://www.linkedin.com/in/leonardo-schumann/">Meu LinkedIn</a>
+        </p>
     </div>
-</address>
+
+</body>

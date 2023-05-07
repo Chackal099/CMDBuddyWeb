@@ -19,28 +19,13 @@ namespace CMDBuddy.Controllers
 
 
 
-        [HttpPost]
-        public ActionResult Acessar(Usuario usuario)
-        {
-            Conexao conexao = new Conexao();
-            string StrQuery = "SELECT * FROM users WHERE ";
-            StrQuery += "login = '" + usuario.Username + "' and ";
-            StrQuery += "senha = '" + usuario.Userpass + "';";
-            using (MySqlCommand comando = new MySqlCommand(StrQuery, conexao.conn))
-            {
-                MySqlDataReader dr = comando.ExecuteReader();
-                if (dr.HasRows)
-                {
-                    _ = dr.Read();
-                    return View();
-                }
-                else
-                {
-                    return RedirectToAction("Index");
-                }
-            }
-        }
+        
         public ActionResult Cadastra()
+        {
+            return View();
+        }
+
+        public ActionResult Lembra()
         {
             return View();
         }
@@ -51,14 +36,44 @@ namespace CMDBuddy.Controllers
 
             using (Conexao conexao = new Conexao())
             {
-                string StrQuery = "insert into users (login, senha) values ( ";
+                string StrQuery = "insert into users (login, senha, nome, email) values ( ";
                 StrQuery += "'" + usuario.Username + "',";
-                StrQuery += "'" + usuario.Userpass + "');";
+                StrQuery += "'" + usuario.Userpass + "',";
+                StrQuery += "'" + usuario.Nome + "',";
+                StrQuery += "'" + usuario.Email + "');";
                 using (MySqlCommand comando = new MySqlCommand(StrQuery, conexao.conn))
                 {
                     comando.ExecuteNonQuery();
                 }
                 return RedirectToAction("Index");
+            }
+        }
+
+        [HttpPost]
+        public ActionResult Lembrar(Usuario usuario, Lembrar lembrar)
+        {
+            Conexao conexao = new Conexao();
+            string StrQuery = "SELECT * FROM users WHERE ";
+            StrQuery += "email = '" + usuario.Email + "';";
+            using (MySqlCommand comando = new MySqlCommand(StrQuery, conexao.conn))
+            {
+                MySqlDataReader dr = comando.ExecuteReader();
+                if (dr.HasRows)
+                {
+                    _ = dr.Read();
+                    StrQuery = "insert into lembrar (nome, email) values ( ";
+                    StrQuery += "'" + lembrar.Nome + "',";
+                    StrQuery += "'" + dr.GetString(4) + "');";
+                    //StrQuery += "'" + lembrar.Email + "');";
+                    MySqlCommand comando1 = new MySqlCommand(StrQuery, conexao.conn);
+                    dr.Close();
+                    comando1.ExecuteNonQuery();
+                    return RedirectToAction("Lembra");
+                }
+                else
+                {
+                    return RedirectToAction("Lembra");
+                }
             }
         }
 

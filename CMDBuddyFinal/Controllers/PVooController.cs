@@ -49,9 +49,17 @@ namespace CMDBuddyFinal.Controllers
                         OutrosDados = Convert.ToString(dr["OutrosDados"]),
                         Autonomia = Convert.ToString(dr["Autonomia"]),
                         PessBordo = Convert.ToString(dr["PessBordo"]),
-                        RadEmer = Convert.ToBoolean(dr["RadEmer"]),
-                        EquipSobrev = Convert.ToBoolean(dr["EquipSobrev"]),
-                        VestSobrev = Convert.ToBoolean(dr["VestSobrev"]),
+                        RadEmer_U = Convert.ToBoolean(dr["RadEmer_U"]),
+                        RadEmer_V = Convert.ToBoolean(dr["RadEmer_V"]),
+                        RadEmer_E = Convert.ToBoolean(dr["RadEmer_E"]),
+                        EquipSobrev_P = Convert.ToBoolean(dr["EquipSobrev_P"]),
+                        EquipSobrev_D = Convert.ToBoolean(dr["EquipSobrev_D"]),
+                        EquipSobrev_M = Convert.ToBoolean(dr["EquipSobrev_M"]),
+                        EquipSobrev_J = Convert.ToBoolean(dr["EquipSobrev_J"]),
+                        VestSobrev_L = Convert.ToBoolean(dr["VestSobrev_L"]),
+                        VestSobrev_F = Convert.ToBoolean(dr["VestSobrev_F"]),
+                        VestSobrev_U = Convert.ToBoolean(dr["VestSobrev_U"]),
+                        VestSobrev_V = Convert.ToBoolean(dr["VestSobrev_V"]),
                         QuantBotes = Convert.ToString(dr["QuantBotes"]),
                         CapBotes = Convert.ToString(dr["CapBotes"]),
                         CorBotes = Convert.ToString(dr["CorBotes"]),
@@ -75,7 +83,7 @@ namespace CMDBuddyFinal.Controllers
         {
             using (Conexao conexao = new Conexao())
             {
-                string StrQuery = "insert into pvoo(Destinat, HorApre, Remet, Complem, Prefix, RegraVoo, TipoVoo, NAvioes, TipoAviao, CatEstTurb, EquipCap, AerodPart, Hora, VelCruz, NvlCruz, Rota, AeroDest, DurTotVoo, AeroAlt, AeroRes, OutrosDados, Autonomia, PessBordo, RadEmer, EquipSobrev, VestSobrev, QuantBotes, CapBotes, CorBotes, CorAviao, Observ, Pilot) values(";
+                string StrQuery = "insert into pvoo(Destinat, HorApre, Remet, Complem, Prefix, RegraVoo, TipoVoo, NAvioes, TipoAviao, CatEstTurb, EquipCap, AerodPart, Hora, VelCruz, NvlCruz, Rota, AeroDest, DurTotVoo, AeroAlt, AeroRes, OutrosDados, Autonomia, PessBordo, RadEmer_U, RadEmer_V, RadEmer_E, EquipSobrev_P, EquipSobrev_D, EquipSobrev_M, EquipSobrev_J, VestSobrev_L, VestSobrev_F, VestSobrev_U, VestSobrev_V, QuantBotes, CapBotes, CorBotes, CorAviao, Observ, Pilot) values(";
                 StrQuery += "'" + pvoo.Destinat + "',";
                 StrQuery += "'" + pvoo.HorApre + "',";
                 StrQuery += "'" + pvoo.Remet + "',";
@@ -99,9 +107,17 @@ namespace CMDBuddyFinal.Controllers
                 StrQuery += "'" + pvoo.OutrosDados + "',";
                 StrQuery += "'" + pvoo.Autonomia + "',";
                 StrQuery += "'" + pvoo.PessBordo + "',";
-                StrQuery += "'" + pvoo.RadEmer + "',";
-                StrQuery += "'" + pvoo.EquipSobrev + "',";
-                StrQuery += "'" + pvoo.VestSobrev + "',";
+                StrQuery += "'" + pvoo.RadEmer_U + "',";
+                StrQuery += "'" + pvoo.RadEmer_V + "',";
+                StrQuery += "'" + pvoo.RadEmer_E + "',";
+                StrQuery += "'" + pvoo.EquipSobrev_P + "',";
+                StrQuery += "'" + pvoo.EquipSobrev_D + "',";
+                StrQuery += "'" + pvoo.EquipSobrev_M + "',";
+                StrQuery += "'" + pvoo.EquipSobrev_J + "',";
+                StrQuery += "'" + pvoo.VestSobrev_L + "',";
+                StrQuery += "'" + pvoo.VestSobrev_F + "',";
+                StrQuery += "'" + pvoo.VestSobrev_U + "',";
+                StrQuery += "'" + pvoo.VestSobrev_V + "',";
                 StrQuery += "'" + pvoo.QuantBotes + "',";
                 StrQuery += "'" + pvoo.CapBotes + "',";
                 StrQuery += "'" + pvoo.CorBotes + "',";
@@ -153,9 +169,17 @@ namespace CMDBuddyFinal.Controllers
                     pvoo.OutrosDados = Convert.ToString(dr["OutrosDados"]);
                     pvoo.Autonomia = Convert.ToString(dr["Autonomia"]);
                     pvoo.PessBordo = Convert.ToString(dr["PessBordo"]);
-                    pvoo.RadEmer = Convert.ToBoolean(dr["RadEmer"]);
-                    pvoo.EquipSobrev = Convert.ToBoolean(dr["EquipSobrev"]);
-                    pvoo.VestSobrev = Convert.ToBoolean(dr["VestSobrev"]);
+                    pvoo.RadEmer_U = Convert.ToBoolean(dr["RadEmer_U"]);
+                    pvoo.RadEmer_V = Convert.ToBoolean(dr["RadEmer_V"]);
+                    pvoo.RadEmer_E = Convert.ToBoolean(dr["RadEmer_E"]);
+                    pvoo.EquipSobrev_P = Convert.ToBoolean(dr["EquipSobrev_P"]);
+                    pvoo.EquipSobrev_D = Convert.ToBoolean(dr["EquipSobrev_D"]);
+                    pvoo.EquipSobrev_M = Convert.ToBoolean(dr["EquipSobrev_M"]);
+                    pvoo.EquipSobrev_J = Convert.ToBoolean(dr["EquipSobrev_J"]);
+                    pvoo.VestSobrev_L = Convert.ToBoolean(dr["VestSobrev_L"]);
+                    pvoo.VestSobrev_F = Convert.ToBoolean(dr["VestSobrev_F"]);
+                    pvoo.VestSobrev_U = Convert.ToBoolean(dr["VestSobrev_U"]);
+                    pvoo.VestSobrev_V = Convert.ToBoolean(dr["VestSobrev_V"]);
                     pvoo.QuantBotes = Convert.ToString(dr["QuantBotes"]);
                     pvoo.CapBotes = Convert.ToString(dr["CapBotes"]);
                     pvoo.CorBotes = Convert.ToString(dr["CorBotes"]);
@@ -200,14 +224,22 @@ namespace CMDBuddyFinal.Controllers
                 StrQuery += "OutrosDados = '" + pvoo.OutrosDados + "', ";
                 StrQuery += "Autonomia = '" + pvoo.Autonomia + "', ";
                 StrQuery += "PessBordo = '" + pvoo.PessBordo + "', ";
-                StrQuery += "RadEmer = '" + pvoo.RadEmer + "' ";
-                StrQuery += "EquipSobrev = '" + pvoo.EquipSobrev + "' ";
-                StrQuery += "VestSobrev = '" + pvoo.VestSobrev + "' ";
-                StrQuery += "QuantBotes = '" + pvoo.QuantBotes + "' ";
-                StrQuery += "CapBotes = '" + pvoo.CapBotes + "' ";
-                StrQuery += "CorBotes = '" + pvoo.CorBotes + "' ";
-                StrQuery += "CorAviao = '" + pvoo.CorAviao + "' ";
-                StrQuery += "Observ = '" + pvoo.Observ + "' ";
+                StrQuery += "RadEmer_U = '" + pvoo.RadEmer_U + "', ";
+                StrQuery += "RadEmer_V = '" + pvoo.RadEmer_V + "', ";
+                StrQuery += "RadEmer_E = '" + pvoo.RadEmer_E + "', ";
+                StrQuery += "EquipSobrev_P = '" + pvoo.EquipSobrev_P + "', ";
+                StrQuery += "EquipSobrev_D = '" + pvoo.EquipSobrev_D + "', ";
+                StrQuery += "EquipSobrev_M = '" + pvoo.EquipSobrev_M + "', ";
+                StrQuery += "EquipSobrev_J = '" + pvoo.EquipSobrev_J + "', ";
+                StrQuery += "VestSobrev_L = '" + pvoo.VestSobrev_L + "', ";
+                StrQuery += "VestSobrev_F = '" + pvoo.VestSobrev_F + "', ";
+                StrQuery += "VestSobrev_U = '" + pvoo.VestSobrev_U + "', ";
+                StrQuery += "VestSobrev_V = '" + pvoo.VestSobrev_V + "', ";
+                StrQuery += "QuantBotes = '" + pvoo.QuantBotes + "', ";
+                StrQuery += "CapBotes = '" + pvoo.CapBotes + "', ";
+                StrQuery += "CorBotes = '" + pvoo.CorBotes + "', ";
+                StrQuery += "CorAviao = '" + pvoo.CorAviao + "', ";
+                StrQuery += "Observ = '" + pvoo.Observ + "', ";
                 StrQuery += "Pilot = '" + pvoo.Pilot + "' ";
                 StrQuery += "where idPVoo = " + pvoo.idPVoo + ";";
                 using (MySqlCommand comando = new MySqlCommand(StrQuery, conexao.conn))
@@ -255,9 +287,17 @@ namespace CMDBuddyFinal.Controllers
                     pvoo.OutrosDados = Convert.ToString(dt["OutrosDados"]);
                     pvoo.Autonomia = Convert.ToString(dt["Autonomia"]);
                     pvoo.PessBordo = Convert.ToString(dt["PessBordo"]);
-                    pvoo.RadEmer = Convert.ToBoolean(dt["RadEmer"]);
-                    pvoo.EquipSobrev = Convert.ToBoolean(dt["EquipSobrev"]);
-                    pvoo.VestSobrev = Convert.ToBoolean(dt["VestSobrev"]);
+                    pvoo.RadEmer_U = Convert.ToBoolean(dt["RadEmer_U"]);
+                    pvoo.RadEmer_V = Convert.ToBoolean(dt["RadEmer_V"]);
+                    pvoo.RadEmer_E = Convert.ToBoolean(dt["RadEmer_E"]);
+                    pvoo.EquipSobrev_P = Convert.ToBoolean(dt["EquipSobrev_P"]);
+                    pvoo.EquipSobrev_D = Convert.ToBoolean(dt["EquipSobrev_D"]);
+                    pvoo.EquipSobrev_M = Convert.ToBoolean(dt["EquipSobrev_M"]);
+                    pvoo.EquipSobrev_J = Convert.ToBoolean(dt["EquipSobrev_J"]);
+                    pvoo.VestSobrev_L = Convert.ToBoolean(dt["VestSobrev_L"]);
+                    pvoo.VestSobrev_F = Convert.ToBoolean(dt["VestSobrev_F"]);
+                    pvoo.VestSobrev_U = Convert.ToBoolean(dt["VestSobrev_U"]);
+                    pvoo.VestSobrev_V = Convert.ToBoolean(dt["VestSobrev_V"]);
                     pvoo.QuantBotes = Convert.ToString(dt["QuantBotes"]);
                     pvoo.CapBotes = Convert.ToString(dt["CapBotes"]);
                     pvoo.CorBotes = Convert.ToString(dt["CorBotes"]);

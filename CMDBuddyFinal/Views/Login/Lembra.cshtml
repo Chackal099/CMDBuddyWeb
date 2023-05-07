@@ -1,0 +1,39 @@
+﻿@model CMDBuddyFinal.Models.Lembrar
+@{
+    ViewBag.Title = "Lembrar Senha";
+}
+<br />
+<br />
+<h2>Lembrar Senha:</h2>
+<p>Coloque suas informações aqui e iremos enviar sua antiga senha novamente</p>
+
+<body style="background-color: #b1ccc4;">
+
+    @using (Html.BeginForm("Lembrar", "Login", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+
+
+        <div class="row">
+            <div class="col-md-4">
+                @Html.EditorFor(model => model.Nome, new { htmlAttributes = new { @class = "form-control col-12", placeholder = "Nome" } })
+                @Html.ValidationMessageFor(model => model.Nome, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="col-md-4">
+                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control col-12", placeholder = "E-mail" } })
+                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+            </div>
+
+            <br />
+
+            <div class="row">
+                <div class="col-md-offset-2 col-md-12" align=right>
+                    <input type="submit" value="Enviar" class="btn btn-outline-success" />
+                </div>
+            </div>
+        </div>
+    }
+
+    </body>
+
