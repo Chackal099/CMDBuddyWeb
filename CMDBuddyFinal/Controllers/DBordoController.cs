@@ -27,7 +27,7 @@ namespace CMDBuddyFinal.Controllers
                         IdBordo = Convert.ToInt32(dr["idBordo"]),
                         NumeroTripulantes = Convert.ToInt32(dr["NumeroTripulantes"]),
                         NomeTripulantes = Convert.ToString(dr["NomeTripulantes"]),
-                        Hora = Convert.ToDateTime(dr["Hora"]).ToString("hh:mm"),
+                        Hora = Convert.ToString(dr["Hora"]),
                         Marca = Convert.ToString(dr["Marca"]),
                         Fabricante = Convert.ToString(dr["Fabricante"]),
                         Modelo = Convert.ToString(dr["Modelo"]),
@@ -116,7 +116,7 @@ namespace CMDBuddyFinal.Controllers
                     dbordo.IdBordo = Convert.ToInt32(dr["idBordo"]);
                     dbordo.NumeroTripulantes = Convert.ToInt32(dr["NumeroTripulantes"]);
                     dbordo.NomeTripulantes = Convert.ToString(dr["NomeTripulantes"]);
-                    dbordo.Hora = Convert.ToDateTime(dr["Hora"]).ToString("hh:mm");
+                    dbordo.Hora = Convert.ToString(dr["Hora"]);
                     dbordo.Marca = Convert.ToString(dr["Marca"]);
                     dbordo.Fabricante = Convert.ToString(dr["Fabricante"]);
                     dbordo.Modelo = Convert.ToString(dr["Modelo"]);
@@ -176,7 +176,7 @@ namespace CMDBuddyFinal.Controllers
                 StrQuery += "HorTotal = '" + dbordo.HorTotal + "', ";
                 StrQuery += "CombTotal = '" + dbordo.CombustTotal + "', ";
                 StrQuery += "Ocorr = '" + dbordo.Ocorrencias + "', ";
-                StrQuery += "Hora = '" + Convert.ToDateTime(dbordo.Hora).ToString("hh:mm") + "' ";
+                StrQuery += "Hora = '" + dbordo.Hora + "' ";
                 StrQuery += "where idBordo = " + dbordo.IdBordo + ";";
                 using (MySqlCommand comando = new MySqlCommand(StrQuery, conexao.conn))
                 {
@@ -202,7 +202,7 @@ namespace CMDBuddyFinal.Controllers
                     dbordo.IdBordo = Convert.ToInt32(dt["idBordo"]);
                     dbordo.NumeroTripulantes = Convert.ToInt32(dt["NumeroTripulantes"]);
                     dbordo.NomeTripulantes = Convert.ToString(dt["NomeTripulantes"]);
-                    dbordo.Hora = Convert.ToDateTime(dt["Hora"]).ToString("hh:mm");
+                    dbordo.Hora = Convert.ToString(dt["Hora"]);
                     dbordo.Marca = Convert.ToString(dt["Marca"]);
                     dbordo.Fabricante = Convert.ToString(dt["Fabricante"]);
                     dbordo.Modelo = Convert.ToString(dt["Modelo"]);

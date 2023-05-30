@@ -68,7 +68,7 @@ namespace CMDBuddy.Controllers
                     MySqlCommand comando1 = new MySqlCommand(StrQuery, conexao.conn);
                     dr.Close();
                     comando1.ExecuteNonQuery();
-                    return RedirectToAction("Lembra");
+                    return RedirectToAction("Index");
                 }
                 else
                 {
