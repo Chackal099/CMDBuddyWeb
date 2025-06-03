@@ -189,8 +189,8 @@ namespace CMDBuddyFinal.Controllers
         public ActionResult Delete(int Id)
         {
             Conexao conexao = new Conexao();
-            string StrQuery = "Select * from bordo where";
-            StrQuery += " idBordo =" + Id + ";";
+            string StrQuery = "Select * from bordo where ";
+            StrQuery += "idBordo =" + Id + ";";
 
             using (MySqlCommand comando = new MySqlCommand(StrQuery, conexao.conn))
             {
